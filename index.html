@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enaiborr Meats | Real Fire. Real Flavour.</title>
+<meta name="description" content="Order fresh nyama choma, goat cuts, and BBQ bundles from Enaiborr Meats, Karen, Nairobi. Order directly on WhatsApp.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome (icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== SPLASH (VIDEO INTRO) ==================== -->
+<section class="splash" id="splash">
+  <!-- VIDEO SLOT: put your file at videos/intro.mp4 (optional: videos/intro.webm)
+       The poster image shows until the video plays and is the fallback if it can't load. -->
+  <video class="splash-video" id="splashVideo"
+         poster="images/splash-bg.jpg"
+         preload="metadata"
+         playsinline muted
+         controlsList="nodownload noremoteplayback"
+         disablePictureInPicture disableRemotePlayback>
+    <source src="videos/fire and meat.mp4" type="video/mp4">
+    <source src="videos/intro.webm" type="video/webm">
+  </video>
+  <div class="splash-overlay"></div>
+
+  <div class="splash-topbar">
+    <div class="logo">
+      <span class="logo-title">Enaiborr</span>
+      <span class="logo-sub">Meats</span>
+    </div>
+    <button class="skip-intro" id="skipIntro">Skip Intro</button>
+  </div>
+
+  <div class="splash-center">
+    <button class="play-btn" id="playIntro" aria-label="Play intro">
+      <i class="fas fa-play"></i>
+    </button>
+    <p class="splash-caption">The fire is ready</p>
+  </div>
+
+  <div class="splash-bottombar">
+    <button class="sound-btn" id="splashSound" aria-label="Toggle sound">
+      <i class="fas fa-volume-mute"></i>
+    </button>
+    <i class="fas fa-arrow-down" id="splashArrow"></i>
+  </div>
+</section>
+
+<!-- ==================== HEADER / NAV ==================== -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#home" class="logo">
+      <span class="logo-title">ENAIBORR</span>
+      <span class="logo-sub">MEATS</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="active">Home</a>
+      <a href="#menu-preview">Our Menu</a>
+      <a href="#craft">Our Craft</a>
+      <a href="#heritage">Our Heritage</a>
+      <a href="#visit">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20place%20an%20order." class="btn btn-outline-sm nav-order-btn" target="_blank" rel="noopener">
+        Order Now
+      </a>
+      <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Live%20BBQ%20(Full%20Goat%20Carcass)" class="icon-btn" aria-label="Quick order">
+        <i class="fas fa-shopping-basket"></i>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="home">
+  <!-- IMAGE SLOT: hero-bg.jpg — meat on skewer over fire, landscape -->
+  <img class="hero-bg-img" src="./Images/full goat.jpeg" alt="Meat grilling over fire">
+  <div class="hero-overlay-left"></div>
+
+  <div class="hero-content">
+    <p class="eyebrow">Fire. Heritage. Flavour.</p>
+    <h1>Real fire.<br>Real flavour.</h1>
+    <p class="hero-sub">Fresh goat cuts, nyama choma, and BBQ bundles — from our fire to your table.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20place%20an%20order." class="btn btn-primary" target="_blank" rel="noopener">
+        Order Now <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="#visit" class="btn btn-outline">Reserve a Table</a>
+    </div>
+
+    <div class="scroll-hint">
+      <i class="fas fa-mouse"></i> Scroll to explore
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MENU PREVIEW CARDS ==================== -->
+<section class="menu-preview" id="menu-preview">
+  <div class="menu-preview-header">
+    <div>
+      <p class="eyebrow">Our Menu</p>
+      <h3>Choose your experience.</h3>
+    </div>
+    <div class="carousel-arrows">
+      <button class="arrow-btn" id="carouselPrev" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+      <button class="arrow-btn" id="carouselNext" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <p class="section-sub-left">Real fire. Real flavour. Always fresh.</p>
+
+  <div class="preview-grid" id="previewGrid">
+    <a href="#menu-full" class="preview-card" data-filter="bundles">
+      <!-- IMAGE SLOT: preview-bundles.jpg -->
+      <img src="./Images/bbq bundle.jpeg" alt="BBQ Bundles">
+      <div class="preview-card-info">
+        <h4>BBQ BUNDLES</h4>
+        <p>Full goat. Fire cooked.</p>
+        <span class="preview-link">Order Now <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+    <a href="#menu-full" class="preview-card" data-filter="cuts">
+      <!-- IMAGE SLOT: preview-cuts.jpg -->
+      <img src="./Images/Ribs.jpeg" alt="Goat Cuts">
+      <div class="preview-card-info">
+        <h4>GOAT CUTS</h4>
+        <p>Soft. Tasty. Fresh.</p>
+        <span class="preview-link">Order Now <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+    <a href="#menu-full" class="preview-card" data-filter="extras">
+      <!-- IMAGE SLOT: preview-extras.jpg -->
+      <img src="./Images/mtura.jpeg" alt="Mutura and extras">
+      <div class="preview-card-info">
+        <h4>MUTURA &amp; EXTRAS</h4>
+        <p>Simple. Excellent. Fresh.</p>
+        <span class="preview-link">Order Now <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+    <a href="#menu-full" class="preview-card" data-filter="raw">
+      <!-- IMAGE SLOT: preview-raw.jpg -->
+      <img src="./Images/raw meat.jpeg" alt="Raw meat cuts">
+      <div class="preview-card-info">
+        <h4>RAW MEAT</h4>
+        <p>Day's fresh cuts. Never fridged.</p>
+        <span class="preview-link">Order Now <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+  </div>
+
+  <div class="preview-dots" id="previewDots"></div>
+</section>
+
+<!-- ==================== FULL MENU ==================== -->
+<section class="menu-section" id="menu-full">
+  <div class="section-header">
+    <p class="eyebrow">Full Menu</p>
+    <h2>Choose your cut.</h2>
+    <p class="section-sub">All prices in Kenyan Shillings (Ksh). Tap "Order" to send your order on WhatsApp.</p>
+  </div>
+
+  <div class="menu-filters" id="menuFilters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="bundles">BBQ Bundles</button>
+    <button class="filter-btn" data-filter="raw">Raw Meat</button>
+    <button class="filter-btn" data-filter="cuts">Goat Cuts</button>
+    <button class="filter-btn" data-filter="extras">Extras</button>
+  </div>
+
+  <div class="menu-grid" id="menuGrid">
+
+    <article class="menu-item" data-category="bundles">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: live-bbq-full-goat.jpg -->
+        <img src="./Images/full goat.jpeg" alt="Live BBQ full goat carcass">
+        <span class="badge badge-advance">Advance order required</span>
+      </div>
+      <div class="menu-item-body">
+        <h3>Live BBQ <span class="item-tag">(Full Goat Carcass)</span></h3>
+        <p class="item-desc">The full BBQ bundle experience — a whole goat, slow roasted over open fire. Perfect for events and large groups.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 22,500.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Live%20BBQ%20(Full%20Goat%20Carcass)%20-%20Ksh%2022%2C500" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item menu-item-wide" data-category="raw">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: raw-meat-price-list.jpg — photo of the raw meat price board/list -->
+        <img src="./Images/raw meat.jpeg" alt="Raw meat price list">
+      </div>
+      <div class="menu-item-body">
+        <h3>Raw Meat <span class="item-tag">Day's Fresh Cuts</span></h3>
+        <p class="item-desc">Never fridged — cut fresh on the day. See the photo for our full raw meat price list, or message us to confirm today's cuts and weight.</p>
+        <div class="menu-item-footer">
+          <span class="price price-muted">See price list</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%20raw%20meat%20-%20please%20share%20today%27s%20fresh%20cuts%20and%20prices." class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item" data-category="cuts">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: goat-ribs-mbavu.jpg -->
+        <img src="./Images/Ribs.jpeg" alt="1kg Goat Ribs Mbavu">
+      </div>
+      <div class="menu-item-body">
+        <h3>Goat Ribs <span class="item-tag">Mbavu — 1kg</span></h3>
+        <p class="item-desc">Tasty, fresh, juicy choma.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 1,500.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%201kg%20Goat%20Ribs%2FMbavu%20-%20Ksh%201%2C500" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item" data-category="cuts">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: forearm-mkono-small.jpg -->
+        <img src="./Images/mkono.jpeg" alt="Forearm Mkono small">
+      </div>
+      <div class="menu-item-body">
+        <h3>Forearm <span class="item-tag">Mkono — Small</span></h3>
+        <p class="item-desc">Tasty, fresh, juicy choma.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 2,250.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Forearm%2FMkono%20(small)%20-%20Ksh%202%2C250" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item" data-category="cuts">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: forearm-mkono-large.jpg -->
+        <img src="./Images/mkono large.jpeg" alt="Forearm Mkono large">
+      </div>
+      <div class="menu-item-body">
+        <h3>Forearm <span class="item-tag">Mkono — Large</span></h3>
+        <p class="item-desc">Tasty, fresh, juicy choma.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 3,000.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Forearm%2FMkono%20(large)%20-%20Ksh%203%2C000" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item" data-category="cuts">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: goat-leg-mguu-small.jpg -->
+        <img src="./Images/mguu(small).jpeg" alt="Goat leg Mguu small">
+        <span class="badge badge-advance">Requires advance notice</span>
+      </div>
+      <div class="menu-item-body">
+        <h3>Goat Leg <span class="item-tag">Mguu — Small</span></h3>
+        <p class="item-desc">Slow roasted goat leg.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 3,700.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Goat%20Leg%2FMguu%20(small)%20-%20Ksh%203%2C700" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item" data-category="cuts">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: goat-leg-mguu-large.jpg -->
+        <img src="./Images/mguu(large).jpeg" alt="Goat leg Mguu large">
+        <span class="badge badge-advance">Requires advance notice</span>
+      </div>
+      <div class="menu-item-body">
+        <h3>Goat Leg <span class="item-tag">Mguu — Large</span></h3>
+        <p class="item-desc">Slow roasted goat leg.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 5,250.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Goat%20Leg%2FMguu%20(large)%20-%20Ksh%205%2C250" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item" data-category="extras">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: mara.jpg -->
+        <img src="./Images/mara.jpeg" alt="Mara goat intestines">
+      </div>
+      <div class="menu-item-body">
+        <h3>Mara <span class="item-tag">Per Portion</span></h3>
+        <p class="item-desc">Sumptuous, full goat's small intestines.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 600.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Mara%20(per%20portion)%20-%20Ksh%20600" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-item" data-category="extras">
+      <div class="menu-item-img">
+        <!-- IMAGE SLOT: mutura-strips.jpg -->
+        <img src="./Images/mtura.jpeg" alt="Mutura strips">
+      </div>
+      <div class="menu-item-body">
+        <h3>Mutura Strips</h3>
+        <p class="item-desc">No blood or innards.</p>
+        <div class="menu-item-footer">
+          <span class="price">Ksh 200.00</span>
+          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%3A%20Mutura%20Strips%20-%20Ksh%20200" class="btn btn-order" target="_blank" rel="noopener">Order</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ==================== OUR CRAFT ==================== -->
+<section class="craft" id="craft">
+  <div class="craft-grid">
+    <div class="craft-text">
+      <p class="eyebrow">Our Craft</p>
+      <h2>Crafted the Enai-Way.</h2>
+      <p class="craft-desc">From the highlands to your table. Every step matters. Every detail is intentional.</p>
+      <p class="craft-promise">This is our promise.</p>
+      <a href="#menu-full" class="btn btn-outline">Our Process</a>
+    </div>
+    <div class="craft-image">
+      <!-- IMAGE SLOT: craft-chef.jpg — someone preparing/seasoning meat -->
+      <img src="./Images/event plate.jpeg" alt="Preparing meat over fire">
+    </div>
+  </div>
+
+  <div class="process-row">
+    <div class="process-step">
+      <i class="fas fa-drumstick-bite"></i>
+      <h5>SELECTED</h5>
+      <p>We source from trusted herders.</p>
+    </div>
+    <div class="process-step">
+      <i class="fas fa-utensils"></i>
+      <h5>PREPARED</h5>
+      <p>Trimmed, seasoned and handled with care.</p>
+    </div>
+    <div class="process-step">
+      <i class="fas fa-fire"></i>
+      <h5>FIRE &amp; SMOKE</h5>
+      <p>Slow-cooked over open flame.</p>
+    </div>
+    <div class="process-step">
+      <i class="fas fa-check-circle"></i>
+      <h5>PERFECTED</h5>
+      <p>Checked, rested and ready to serve.</p>
+    </div>
+    <div class="process-step">
+      <i class="fas fa-concierge-bell"></i>
+      <h5>SERVED</h5>
+      <p>Made on order. Made to be enjoyed.</p>
+    </div>
+  </div>
+
+  <div class="promise-grid">
+    <div class="promise-text">
+      <h3>QUALITY<br>PROMISE</h3>
+      <p>If it's not soft. If it's not tasty.</p>
+      <p>We make it right — every time.</p>
+    </div>
+    <div class="promise-image">
+      <!-- IMAGE SLOT: quality-meat.jpg -->
+      <img src="./Images/full goat.jpeg" alt="Quality checked meat">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE EXPERIENCE ==================== -->
+<section class="experience" id="experience">
+  <div class="experience-grid">
+    <div class="experience-text">
+      <p class="eyebrow">The Experience</p>
+      <h2>Food brings<br>us together.</h2>
+      <p>Good food. Great company.</p>
+      <p class="experience-highlight">Unforgettable moments.</p>
+      <a href="#visit" class="btn btn-outline">Book an Event</a>
+    </div>
+    <div class="experience-image">
+      <!-- IMAGE SLOT: experience-dining.jpg — group dining/event shot -->
+      <img src="./Images/event pics.avif" alt="Group dining experience">
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <i class="fas fa-fire"></i>
+      <h4>5+</h4>
+      <p>YEARS OF FIRE</p>
+    </div>
+    <div class="stat">
+      <i class="fas fa-shield-alt"></i>
+      <h4>100%</h4>
+      <p>QUALITY PROMISE</p>
+    </div>
+    <div class="stat">
+      <i class="fas fa-drumstick-bite"></i>
+      <h4>FRESH</h4>
+      <p>NEVER FRIDGED</p>
+    </div>
+    <div class="stat">
+      <i class="fas fa-users"></i>
+      <h4>MADE TO ORDER</h4>
+      <p>EVERY TIME</p>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- ==================== OUR HERITAGE ==================== -->
+<section class="heritage" id="heritage">
+
+
+  <div class="heritage-content">
+    <p class="eyebrow">Our Heritage</p>
+    <h2>Rooted in the<br>Maasai heartland.</h2>
+    <p>Enaiborr takes its name from the land where our herders have raised livestock with pride and purpose for generations.</p>
+    <p>That heritage is the care we bring to every meal we serve.</p>
+    <p class="heritage-tagline">This is who we are.</p>
+    
+  </div>
+</section>
+
+<!-- ==================== VISIT / ORDER / RESERVE + FOOTER ==================== -->
+<section class="visit" id="visit">
+  <div class="visit-header">
+    <p class="eyebrow">Visit / Order / Reserve</p>
+    <h2>We're ready when you are.</h2>
+  </div>
+
+  <div class="visit-cards">
+    <div class="visit-card">
+      <h4>ORDER NOW</h4>
+      <p>Place your order for pickup or delivery.</p>
+      <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20place%20an%20order." class="link-arrow" target="_blank" rel="noopener">Chat with us →</a>
+    </div>
+    <div class="visit-card">
+      <h4>RESERVE A TABLE</h4>
+      <p>Book ahead for your next meal or event.</p>
+      <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20reserve%20a%20table." class="link-arrow" target="_blank" rel="noopener">Reserve →</a>
+    </div>
+    <div class="visit-card">
+      <h4>FIND US</h4>
+      <p>Karen, Nairobi, Kenya</p>
+    </div>
+    <div class="visit-card">
+      <h4>CALL / WHATSAPP</h4>
+      <p><a href="https://wa.me/254746896674" target="_blank" rel="noopener">+254 746 896 674</a></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-title">ENAIBORR</span>
+        <span class="logo-sub">MEATS</span>
+        <p class="footer-tagline">Real fire. Real flavour. Always fresh.</p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <a href="#home">Home</a>
+        <a href="#menu-full">Menu</a>
+        <a href="#craft">Our Craft</a>
+        <a href="#experience">The Experience</a>
+      </div>
+
+      <div class="footer-help">
+        <h5>Help</h5>
+        <a href="https://wa.me/254746896674" target="_blank" rel="noopener">FAQs</a>
+        <a href="https://wa.me/254746896674" target="_blank" rel="noopener">Delivery</a>
+      </div>
+
+      <div class="footer-social">
+        <h5>Follow Us</h5>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/254746896674" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Enaiborr Meats. All Rights Reserved.</p>
+      <p>Made the Enai-Way</p>
+    </div>
+  </footer>
+</section>
+
+<!-- Sticky mobile order bar -->
+<a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20place%20an%20order." class="mobile-order-bar" target="_blank" rel="noopener">
+  Order on WhatsApp
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
