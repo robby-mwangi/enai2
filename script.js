@@ -189,6 +189,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  /* ---------- 5.5 Price list modal ---------- */
+const priceModal = document.getElementById('priceModal');
+const priceModalImage = document.getElementById('priceModalImage');
+const priceModalClose = document.getElementById('priceModalClose');
+const priceModalBackdrop = document.getElementById('priceModalBackdrop');
+
+const openPriceModal = (imageSrc) => {
+  if (!priceModal || !priceModalImage) return;
+  priceModalImage.src = imageSrc;
+  priceModal.classList.add('open');
+  document.body.classList.add('no-scroll');
+};
+
+const closePriceModal = () => {
+  if (!priceModal) return;
+  priceModal.classList.remove('open');
+  document.body.classList.remove('no-scroll');
+};
+
+document.querySelectorAll('.price-list-btn').forEach(btn => {
+  btn.addEventListener('click', () => openPriceModal(btn.dataset.priceImage));
+});
+
+if (priceModalClose) priceModalClose.addEventListener('click', closePriceModal);
+if (priceModalBackdrop) priceModalBackdrop.addEventListener('click', closePriceModal);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && priceModal && priceModal.classList.contains('open')) closePriceModal();
+});
 
   /* ---------- 6. Footer year ---------- */
   const yearEl = document.getElementById('year');

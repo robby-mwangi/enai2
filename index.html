@@ -199,20 +199,22 @@
       </div>
     </article>
 
-    <article class="menu-item menu-item-wide" data-category="raw">
-      <div class="menu-item-img">
-        <!-- IMAGE SLOT: raw-meat-price-list.jpg — photo of the raw meat price board/list -->
-        <img src="./Images/raw meat.jpeg" alt="Raw meat price list">
-      </div>
-      <div class="menu-item-body">
-        <h3>Raw Meat <span class="item-tag">Day's Fresh Cuts</span></h3>
-        <p class="item-desc">Never fridged — cut fresh on the day. See the photo for our full raw meat price list, or message us to confirm today's cuts and weight.</p>
-        <div class="menu-item-footer">
-          <span class="price price-muted">See price list</span>
-          <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%20raw%20meat%20-%20please%20share%20today%27s%20fresh%20cuts%20and%20prices." class="btn btn-order" target="_blank" rel="noopener">Order</a>
-        </div>
-      </div>
-    </article>
+<article class="menu-item menu-item-wide" data-category="raw">
+  <div class="menu-item-img">
+    <!-- IMAGE SLOT: raw-meat.jpg — actual photo of the raw meat cuts -->
+    <img src="./Images/Raw leg.jpg" alt="Raw meat cuts">
+  </div>
+  <div class="menu-item-body">
+    <h3>Raw Meat <span class="item-tag">Day's Fresh Cuts</span></h3>
+    <p class="item-desc">Never fridged — cut fresh on the day. Tap "See Price List" for today's cuts and prices, or message us to confirm.</p>
+    <div class="menu-item-footer">
+      <button type="button" class="price-list-btn" data-price-image="./Images/raw meat.jpeg">
+        See Price List
+      </button>
+      <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20order%20raw%20meat%20-%20please%20share%20today%27s%20fresh%20cuts%20and%20prices." class="btn btn-order" target="_blank" rel="noopener">Order</a>
+    </div>
+  </div>
+</article>
 
     <article class="menu-item" data-category="cuts">
       <div class="menu-item-img">
@@ -332,11 +334,11 @@
       <h2>Crafted the Enai-Way.</h2>
       <p class="craft-desc">From the highlands to your table. Every step matters. Every detail is intentional.</p>
       <p class="craft-promise">This is our promise.</p>
-      <a href="#menu-full" class="btn btn-outline">Our Process</a>
+     
     </div>
     <div class="craft-image">
       <!-- IMAGE SLOT: craft-chef.jpg — someone preparing/seasoning meat -->
-      <img src="./Images/event plate.jpeg" alt="Preparing meat over fire">
+      <img src="./Images/Chefs preparing.jpg" alt="Preparing meat over fire">
     </div>
   </div>
 
@@ -376,7 +378,7 @@
     </div>
     <div class="promise-image">
       <!-- IMAGE SLOT: quality-meat.jpg -->
-      <img src="./Images/full goat.jpeg" alt="Quality checked meat">
+      <img src="./Images/quality not promise.jpg" alt="Quality checked meat">
     </div>
   </div>
 </section>
@@ -487,16 +489,15 @@
         <a href="https://wa.me/254746896674" target="_blank" rel="noopener">Delivery</a>
       </div>
 
-      <div class="footer-social">
-        <h5>Follow Us</h5>
-        <div class="social-icons">
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/254746896674" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </div>
+ <div class="footer-social">
+  <h5>Follow Us</h5>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/enaiborrmeats" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=100087769151988" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.tiktok.com/@enaiborrmeats" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/254746896674" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
 
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> Enaiborr Meats. All Rights Reserved.</p>
@@ -509,6 +510,17 @@
 <a href="https://wa.me/254746896674?text=Hi%20Enaiborr%20Meats%2C%20I%27d%20like%20to%20place%20an%20order." class="mobile-order-bar" target="_blank" rel="noopener">
   Order on WhatsApp
 </a>
+
+<!-- Price list image modal -->
+<div class="price-modal" id="priceModal">
+  <div class="price-modal-backdrop" id="priceModalBackdrop"></div>
+  <div class="price-modal-content">
+    <button class="price-modal-close" id="priceModalClose" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <img src="" alt="Price list" id="priceModalImage">
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
